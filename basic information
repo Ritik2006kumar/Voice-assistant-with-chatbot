@@ -1,0 +1,31 @@
+improt all library and create virtual envorment
+
+import os
+import io
+import json
+import time
+import tempfile
+import subprocess
+from datetime import datetime
+from typing import List, Tuple, Optional
+
+import streamlit as st
+from dotenv import load_dotenv
+
+# LLM & RAG
+from langchain_community.chat_models import ChatOllama
+from langchain_community.embeddings import OllamaEmbeddings
+from langchain_community.vectorstores import FAISS
+from langchain_community.document_loaders import PyPDFLoader, TextLoader
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain.memory import ConversationBufferMemory
+from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.output_parsers import StrOutputParser
+
+# Web search
+from duckduckgo_search import DDGS
+
+# Voice & Sentiment
+import pyttsx3
+import speech_recognition as sr
+from textblob import TextBlob
